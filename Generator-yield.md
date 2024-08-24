@@ -22,10 +22,31 @@ for line in read_large_file('large_log_file.txt'):
     print(line)
 
 
-2. Streaming Data Processing
+
+
+
+
+### 2. Streaming Data Processing
+
+**Filename:** `streaming_data_processing.md`
+
+```markdown
+# Streaming Data Processing
+
 In scenarios where you receive data in streams (e.g., from a network socket or real-time data feeds), generators allow you to process data as it arrives without waiting for the complete dataset.
 
-Use Case:
+**Use Case:**
+- **Real-time data analysis:** Processing data from APIs or sensors.
 
-Real-time data analysis: Processing data from APIs or sensors.
-Example:
+**Example:**
+```python
+def data_stream():
+    while True:
+        data = get_data_from_source()  # Hypothetical function
+        if not data:
+            break
+        yield data
+
+# Usage
+for chunk in data_stream():
+    process(chunk)  # Process each chunk of data

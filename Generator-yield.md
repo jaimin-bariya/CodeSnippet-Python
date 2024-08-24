@@ -20,3 +20,12 @@ def read_large_file(file_path):
 # Usage
 for line in read_large_file('large_log_file.txt'):
     print(line)
+
+
+2. Streaming Data Processing
+In scenarios where you receive data in streams (e.g., from a network socket or real-time data feeds), generators allow you to process data as it arrives without waiting for the complete dataset.
+
+Use Case:
+
+Real-time data analysis: Processing data from APIs or sensors.
+Example:
